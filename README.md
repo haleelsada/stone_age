@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="620" height="564" alt="image" src="https://github.com/user-attachments/assets/eb536db2-e89b-40af-b277-e00b445e054f" />
+</p>
+
 ## Game Overview
 
 Rivers and Stones is a two-player deterministic, turn-based board game played on three possible grid sizes (13×12, 15×14, 17×16). Each player controls identical pieces, each having two faces:
@@ -22,6 +26,9 @@ Fill the player's scoring area (SA) — located near the opponent’s starting s
 - Rotate a River by 90°
 
 - Movement on Rivers allows multi-step traversal along flow direction, possibly chaining through multiple Rivers until blocked.
+<p align="cente">
+<img width="1215" height="9117" alt="image" src="https://github.com/user-attachments/assets/ef1f743b-dae4-4dce-90d5-a0c4d5855c2b" />
+</p>
 
 ## Additional Rules
 
