@@ -38,6 +38,22 @@ Fill the player's scoring area (SA) — located near the opponent’s starting s
 
 - Pieces in scoring areas remain active and may still be moved, flipped, or pushed.
 
+## C++ Agent Features
+
+This C++ agent implements a multi-strategy search engine designed for competitive board-game play. Its core decision-making is based on a minimax search, with adjustable search depth depending on the game situation and available time. At deeper levels the agent prunes obviously poor or dominated moves to cut down the branching factor, allowing it to explore promising lines more thoroughly without brute-forcing all possibilities.
+
+To adapt to different phases of the game, the agent can switch evaluation modes. It normally uses a detailed evaluation heuristic, but when specific board patterns or search conditions are detected, it switches to evalFunction2, a more aggressive/alternative strategy to better suit that game phase. This allows the agent to dynamically change play style rather than relying on one static evaluation metric.
+
+Unlike full game-tree engines that store complete board states at every node, this agent keeps memory usage low by storing only the move taken to reach each node, not the whole state. During search, the agent reconstructs states on the fly by applying and undoing moves as it traverses the virtual game tree. This provides the efficiency benefits of deep tree search without the overhead of copying or storing large state objects.
+
+Overall, the agent combines depth-adaptive minimax, move filtering, strategy switching, and lightweight tree traversal to produce strong, resource-efficient gameplay.
+
+## Python agent
+
+The Python agent operates on lightweight state transitions. Rather than storing the entire game tree or all board states, it clones only the necessary next states when evaluating moves. This allows the agent to explore the branching factor without excessive memory use. It uses helper utilities like generate_all_moves, compute_valid_targets, and get_river_flow_destinations to reason about stone movement, river flows, push mechanics, and scoring constraints. Each move is evaluated independently using an adaptable evaluation function powered by a set of adjustable weights.
+
+Finally, the agent’s strategy is flexible: it can emphasize different components of the board (offense, defense, distance, threats, or reachable scoring states) depending on how the evaluation function is tuned. This enables the agent to shift between aggressive and conservative play styles without altering its core logic. The overall result is a tactically aware, rule-driven, and computationally efficient agent capable of making strong decisions in a highly dynamic game environment.
+
 ## Dependencies
 - Python 3.9
 - Pygame
